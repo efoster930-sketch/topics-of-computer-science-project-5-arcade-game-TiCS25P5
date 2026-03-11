@@ -16,7 +16,7 @@ root.title("Protect the Portal")
 canvas = tk.Canvas(root, width=800, height=600, bg='black')
 canvas.pack()
 
-# Add stars to create a space-like background
+# Added stars to create a space-like background
 stars = []
 for _ in range(100):
     x = random.randint(0, 800)
