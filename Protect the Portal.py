@@ -86,6 +86,34 @@ def make_player_sprite():
 
     return img
 
+def make_dasher_sprite():
+    pattern = [
+
+    ]
+    h = len(pattern)
+    w = len(pattern[0])
+    scale = 2
+    img = tk.PhotoImage(width=w*scale, height=h*scale)
+    for y in range(h):
+        for x in range(w):
+            char = pattern[y][x]
+            if char != "0":
+                color = {
+                    "1": "black",
+                    "2": "#4B0082",
+                    "3": "#8A2BE2",
+                    "4": "#00FFFF",
+                    "5": "#001F54",
+                    "6": "#FF2F92",
+                    "7": "#6E6E6E",
+                    "8": "#66D9FF",
+                    "9": "#D4AF37"
+
+                }.get(char, "black")
+                for dy in range(scale):
+                    for dx in range(scale):
+                        img.put(color, [x*scale + dx, y*scale + dy])
+
 # Create the player sprite
 player_img = make_player_sprite()
 player = canvas.create_image(400, 550, image=player_img)
